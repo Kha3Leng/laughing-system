@@ -14,14 +14,23 @@
 }
 
 .ModalOpen {
-  opacity: 1;
-  transform: translate(0);
   animation: ModalOpen 0.4s ease-out normal;
 }
 
 .ModalClosed {
-  opacity: 0;
-  transform: translate(0%, -100%);
+  animation: ModalClosed 1s ease-out normal;
+}
+.fade-slide-enter {
+}
+
+.fade-slide-enter-active {
+  animation: ModalOpen 0.4s ease-out normal;
+}
+
+.fade-slide-exit {
+}
+
+.fade-slide-exit-active {
   animation: ModalClosed 1s ease-out normal;
 }
 

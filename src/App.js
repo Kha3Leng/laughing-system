@@ -1,20 +1,19 @@
 import React, { Component } from "react";
-import { Transition } from 'react-transition-group';
+// import { Transition } from 'react-transition-group';
 
 import "./App.css";
 import Modal from "./components/Modal/Modal";
 import Backdrop from "./components/Backdrop/Backdrop";
 import List from "./components/List/List";
 
-const animationTiming = {
-  enter: 300,
-  exit: 2000
-};
+// const animationTiming = {
+//   enter: 300,
+//   exit: 2000
+// };
 
 class App extends Component {
   state = {
-    modalIsOpen: false,
-    showDiv: false
+    modalIsOpen: false
   }
 
   showModal = () => {
@@ -32,32 +31,18 @@ class App extends Component {
         <button
           className="Button"
           onClick={() => this.setState(prevState => ({ showDiv: !prevState.showDiv }))}>Toggle</button>
-        <Transition
-          in={this.state.showDiv}
-          timeout={animationTiming}
+
+        {/* <Transition
           mountOnEnter
           unmountOnExit
+          in={this.state.modalIsOpen}
+          timeout={animationTiming}
           onEnter={() => console.log("ENTER")}
-        >
-          {state =>
-            <div
-              style={{
-                height: '100px',
-                width: '100px',
-                backgroundColor: 'red',
-                margin: 'auto',
-                transition: 'opacity 1s',
-                transitionTimingFunction: 'ease-out',
-                opacity: state === 'exiting' ? 0 : 1
-              }}>
-
-            </div>
-          }
-        </Transition>
-        <Transition mountOnEnter unmountOnExit in={this.state.modalIsOpen} timeout={animationTiming}>
-          {state =>
-            <Modal show={state} closed={this.closeModal} />}
-        </Transition>
+          onEntering={() => console.log('ENTERING')}
+          onEntered={() => console.log('ENTERED')}>
+          {state => */}
+        <Modal show={this.state.modalIsOpen} closed={this.closeModal} />
+        {/* </Transition> */}
 
         {this.state.modalIsOpen ? <Backdrop show={this.state.modalIsOpen} /> : null}
         <button className="Button" onClick={this.showModal}>Open Modal</button>
