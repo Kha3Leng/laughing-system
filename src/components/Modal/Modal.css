@@ -10,19 +10,19 @@
   top: 30%;
   left: 25%;
   width: 50%;
-  transition: all 0.3s ease-out 0.1s;
+  transition: all ease-out 0.1s;
 }
 
 .ModalOpen {
   opacity: 1;
   transform: translate(0);
-  animation: ModalOpen 0.5s ease-out normal;
+  animation: ModalOpen 0.4s ease-out normal;
 }
 
 .ModalClosed {
   opacity: 0;
   transform: translate(0%, -100%);
-  animation: ModalClosed 0.5s ease-out normal;
+  animation: ModalClosed 1s ease-out normal;
 }
 
 @keyframes ModalOpen {
@@ -50,7 +50,7 @@
     transform: translate(0%, 20%);
   }
   100% {
-    opacity: 0;
+    opacity: 0.1;
     transform: translate(0%, -100%);
   }
 }
