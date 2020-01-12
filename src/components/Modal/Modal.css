@@ -1,21 +1,56 @@
 .Modal {
-    position: fixed;
-    z-index: 200;
-    border: 1px solid #eee;
-    box-shadow: 0 2px 2px #ccc;
-    background-color: white;
-    padding: 10px;
-    text-align: center;
-    box-sizing: border-box;
-    top: 30%;
-    left: 25%;
-    width: 50%;
+  position: fixed;
+  z-index: 200;
+  border: 1px solid #eee;
+  box-shadow: 0 2px 2px #ccc;
+  background-color: white;
+  padding: 10px;
+  text-align: center;
+  box-sizing: border-box;
+  top: 30%;
+  left: 25%;
+  width: 50%;
+  transition: all 0.3s ease-out 0.1s;
 }
 
 .ModalOpen {
-    display: block;
+  opacity: 1;
+  transform: translate(0);
+  animation: ModalOpen 0.5s ease-out normal;
 }
 
 .ModalClosed {
-    display: none;
+  opacity: 0;
+  transform: translate(0%, -100%);
+  animation: ModalClosed 0.5s ease-out normal;
+}
+
+@keyframes ModalOpen {
+  0% {
+    opacity: 0;
+    transform: translate(0%, -100%);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(0%, 20%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0%, 0%);
+  }
+}
+
+@keyframes ModalClosed {
+  0% {
+    opacity: 1;
+    transform: translate(0%, 0%);
+  }
+  50% {
+    opacity: 0.8;
+    transform: translate(0%, 20%);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(0%, -100%);
+  }
 }
